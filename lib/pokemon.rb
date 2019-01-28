@@ -1,19 +1,19 @@
 class Pokemon
   attr_accessor :id, :name, :type, :db, :hp
 
-  @@all = []
+  # @@all = []
   def initialize(id:, name:, type:, db:, hp: nil)
     self.id = id
     self.name = name
     self.type = type
     self.db = db
     self.hp = 60
-    @@all << self
+    # @@all << self
   end
 
-  def self.all
-    @@all
-  end
+  # def self.all
+  #   @@all
+  # end
 
   def self.save(name, type, db)
       db.execute("INSERT INTO pokemon (name, type) VALUES (?, ?)", name, type)
