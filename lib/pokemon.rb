@@ -23,5 +23,7 @@ class Pokemon
      self.all.detect {|pokemon| pokemon.id == id}
   end
 
-
+  def alter_hp(altered_hp, db)
+    db.execute("UPDATE pokemon SET hp=? WHERE id=?", alter_hp, self.id)
+  end
 end
