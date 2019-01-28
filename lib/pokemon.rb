@@ -20,7 +20,8 @@ class Pokemon
     end
 
   def self.find(id, db)
-     self.all.detect {|pokemon| pokemon.id == id}
+    #  self.all.detect {|pokemon| pokemon.id == id}
+    db.execute("SELECT * FROM pokemon WHERE (name, type) VALUES (?, ?)", name, type)
   end
 
   def alter_hp(altered_hp, db)
