@@ -22,6 +22,7 @@ class Pokemon
   def self.find(id, db)
     #  self.all.detect {|pokemon| pokemon.id == id}
     db.execute("SELECT * FROM pokemon WHERE id=?",id)
+    self.new
   end
 
   def alter_hp(altered_hp, db)
