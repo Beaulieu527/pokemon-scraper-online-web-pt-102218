@@ -7,7 +7,7 @@ class Pokemon
     self.name = name
     self.type = type
     self.db = db
-    self.hp = 60
+    self.hp = hp
     # @@all << self
   end
 
